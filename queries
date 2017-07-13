@@ -1,0 +1,171 @@
+# query Some($desc: String = "Root", $flag: Boolean!){
+#   usersByRole(desc: $desc) {
+#     ...dataUser
+#   }
+#   userByQwe: usersByRole(desc: "Root") {
+#     name @include(if: $flag)
+#   }
+# }
+# fragment dataUser on User {
+#   name
+#   id
+#   role {
+#     description
+#   }
+# }
+# mutation SetNewName($id: ID!, $name: String!) {
+#   setUserName (id: $id, name: $name) {
+#     id
+#     name
+#   }
+# }
+# query GetIgor($name:String!) {
+#   userByName(name: $name) {
+#     id
+#     name
+#     role {
+#     	description
+#   	}
+#     ... on Woman {
+#       asd
+#     }
+#   }
+# }
+
+# query GetUsersByOrient {
+#   users {
+#     name,
+#     orientation
+#   }
+# }
+
+# query GetMans {
+#   users {
+#     __typename
+#     id
+#     name
+#     role {
+#       id
+#     }
+#     ... on Man {
+#       qwe
+#     }
+#     ... on Woman {
+#       asd
+#     }
+#   }
+# }
+
+# query GetUsersByOrientation($orientation: Orientation) {
+#   usersByOrientation(orientation: $orientation) {
+#     id
+#     name
+#     orientation
+#   }
+# }
+
+# query Search($text: String!) {
+#   search(text: $text) {
+#     ... on Man {
+#       name,
+#     	id,
+#       qwe
+#     }
+#     ... on Woman {
+#       name,
+#     	id,
+#       asd
+#     }
+#   }
+# }
+# {
+#   mutation createUser($data: UserInput!) {
+#   createUser(data: $data) {
+#     name,
+#     orientation
+#   }
+# }
+# query users {
+#   users {
+#     ... Main
+#     ... on Man {
+#       qwe
+#     }
+#     ... on Woman {
+#       asd
+#     }
+#   }
+# }
+
+# fragment Main on User {
+#   id,
+#   name,
+#   orientation,
+#   role {
+#     id,
+#     description
+#   }
+# }
+# }
+# {
+#   __schema{
+#     types {
+#       name
+#     }
+
+#   }
+# }
+# {
+#   __type(name: "User") {
+#     name
+#     kind
+#     description
+#     fields {
+#       name
+#       type {
+#         name
+#         kind
+#         ofType {
+#           name
+#           kind
+#         }
+#       }
+#     }
+#   }
+# }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+___________________________________________________________________
+globalVars
+
+{
+  "data": {
+    "id": 5,
+    "name": "Ignat",
+    "role": "Admin",
+    "orientation": ["bi"],
+    "type": "Man",
+    "dop": "qweasd"
+  }
+  "desc": "User",
+   "flag": false,
+   "id": 1,
+   "name": "Igor",
+   "orientation": "bi",
+   "text": "I"
+}
